@@ -1,0 +1,62 @@
+{%   extends "layout.html"   %}
+
+{% block body %}
+
+{%  with messages = get_flashed_messages()  %}
+    {%  if messages  %}
+        {%  for message in messages  %}
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="alert alert-primary" role="alert">
+                        {{message}}
+                    </div>
+                </div>
+            </div>
+        {%  endfor  %}
+    {%  endif  %}
+
+{%  endwith  %}
+
+{%  with errors = get_flashed_messages(category_filter=['error'])  %}
+    {%  if errors  %}
+        {%  for error in errors  %}
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="alert alert-danger" role="alert">
+                        {{error}}
+                    </div>
+                </div>
+            </div>
+        {%  endfor  %}
+    {%  endif  %}
+
+{%  endwith  %}
+
+    <div class="row text-center">
+        <div class="col-xl-12">
+                <h1>Login</h1>
+        </div>
+    </div>
+   <div class="row">
+       <div class="col-xl-3 col-lg-12"></div>
+       <div class="col-xl-6 col-lg-12">            
+            <form action="{{  url_for('verifyLogin')  }}" method="POST">
+                <div class="form-group">
+                    <label for="username">Usuario</label>
+                    <input class="form-control" type="text" name="username" placeholder="Ingresa tu ID de Usuario" required>
+                </div>
+                <div class="form-group">
+                    <label for="passqord">Contraseña</label>
+                    <input class="form-control" type="password" name="password" placeholder="Ingresa tu Contraseña" required>
+                </div>
+                <button class="btn btn-success btn-block" type="submit">
+                    Ingresar
+                </button>
+            </form>
+            <a href="{{  url_for('add_user_view')  }}">No tienes una Cuenta?</a>
+        </div>
+        <div class="col-xl-3 col-lg-12"></div    >       
+
+        </div>    
+   </div>
+{% endblock %}

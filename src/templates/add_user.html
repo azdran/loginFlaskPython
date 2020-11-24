@@ -1,0 +1,39 @@
+{%   extends "layout.html"   %}
+{% block body %}
+    <div class="row text-center">
+        <div class="col-xl-12">
+                <h1>Registro</h1>
+        </div>
+    </div>
+   <div class="row">
+       <div class="col-xl-3 col-lg-12"></div>
+       <div class="col-xl-6 col-lg-12">            
+            <form action="{{  url_for('add_user')  }}" method="POST">
+                <div class="form-group">
+                    <label for="username">Usuario</label>
+                    <input class="form-control" type="text" name="username" placeholder="Ingresa tu ID de Usuario" required>
+                </div>
+                <div class="form-group">
+                    <label for="passqord">Contraseña</label>
+                    <input class="form-control" type="password" name="password" placeholder="Ingresa tu Contraseña" required>
+                </div>
+                <div class="form-group">
+                    <label for="role">Seleccione el Rol</label>
+                    <select class="form-control" name="role">
+                      <option value="admin">Administrador</option>
+                      <option value="mod">Moderador</option>
+                      <option value="editor">Editor</option>
+                      <option value="cliente">Cliente</option>
+                    </select>
+                </div>
+                <button class="btn btn-success btn-block" type="submit">
+                    Registrarse
+                </button>
+            </form>
+          
+        </div>
+        <div class="col-xl-3 col-lg-12"></div    >       
+
+        </div>    
+   </div>
+{% endblock %}

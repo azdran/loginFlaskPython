@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Website</title>
+
+     <!--Estilos de Boostrap-->
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+</head>
+<body>
+    <!-- As a heading -->
+<nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">App Cliente-Servidor</span>
+  </nav>
+
+   <div class="container p-4">
+    {%   block body  %}
+    {%   endblock   %}
+   </div>
+
+    <script src="{{ url_for('static', filename= 'js/jquery-3.5.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename= 'js/bootstrap.bundle.min.js')}}"></script>
+    
+</body>
+</html>

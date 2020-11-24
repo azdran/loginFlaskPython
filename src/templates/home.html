@@ -1,0 +1,35 @@
+{%   extends "layout.html"   %}
+{% block body %}
+<div class = 'row'>
+    <div class = "col-xl-12">
+        {%  with success = get_flashed_messages(category_filter=['success'])  %}
+             {%  if success  %}
+                     {%  for msg in success  %}
+                         <div class="row">
+                             <div class="col-xl-12">
+                                 <div class="alert alert-success" role="alert">
+                                     {{msg}}
+                                </div>
+                            </div>
+                          </div>
+                     {%  endfor  %}
+              {%  endif  %}
+        {%  endwith  %}
+    </div>
+</div>
+
+<div class="row text-center">
+    <div class="col-xl-12">
+            <h1>Bienvenido</h1>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <h1 class="display-4">Hola,</h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <a class="btn btn-primary btn-lg" href="/logout" role="button">LogOut</a>
+  </div>
+
+{% endblock %}
